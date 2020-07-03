@@ -1,0 +1,43 @@
+#binDiv{
+    position: absolute;
+    height: 100vw;
+    width: 100vw;
+    top: 100vw;
+    background: url('assets/bin.png');
+    background-size: 100vw;
+    opacity:0;
+    transition: 2s ease-in-out;
+}
+#textDiv{
+    position: absolute;
+    height: 50vw;
+    width: 100vw;
+    top: 50vw;
+    text-align: center;
+    word-wrap: break-word;
+    font-family: "Lucida Console", Courier, monospace;;
+    opacity:0;
+    transition: 2s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+    opacity:1;
+    }
+    100% {
+    opacity:0;
+    }
+}
+
+@keyframes fadeInOut {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
