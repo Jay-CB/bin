@@ -1,23 +1,21 @@
 #binDiv{
     position: absolute;
-    height: 100vw;
+    height: 50vh;
     width: 100vw;
-    top: 100vw;
+    top: 50vh;
     background: url('assets/bin.png');
-    background-size: 100vw;
-    opacity:0;
-    transition: 2s ease-in-out;
+    background-size: 50vh, 100vw;
+    opacity: 0;
 }
 #textDiv{
     position: absolute;
-    height: 50vw;
+    height: 50vh;
     width: 100vw;
-    top: 50vw;
+    top: 25vh;
     text-align: center;
     word-wrap: break-word;
-    font-family: "Lucida Console", Courier, monospace;;
-    opacity:0;
-    transition: 2s ease-in-out;
+    font-weight: normal;
+    opacity: 0;
 }
 @keyframes fadeIn {
     0% {

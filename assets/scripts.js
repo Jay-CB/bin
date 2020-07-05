@@ -12,19 +12,23 @@ client.on('connected', onConnectedHandler);
 client.connect();
 textDiv.innerHTML = twitchChannel;
 var busy = false;
-function sleep(ms) {
+function sleep(ms) 
+{
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-function getRndInteger(min, max) {
+function getRndInteger(min, max) 
+{
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 function notMod(context)
 {
     var retVal = false;
-    if(!context.mod){
+    if(!context.mod)
+    {
         retVal = true;
     }
-    if(context.username == twitchChannel){
+    if(context.username == twitchChannel)
+    {
         retVal = false;
     }
     return retVal;
@@ -33,27 +37,35 @@ function notMod(context)
 async function onMessageHandler(target, context, msg, self) 
 {
     const command = msg.trim();
-    if (busy){
+    if (busy)
+    {
         return;
     }
-    if (modOnly && notMod(context)){
+    if (modOnly && notMod(context))
+    {
         return;
     }
     if (command.startsWith("!bin @"))
     {
-        busy = true;
+        busy = true; // TODO: Sound effect?
         const binName = command.substring(6);
+        textDiv.style.fontSize = (textSize / binName.length) + "vw";
+        await sleep(500);
+        textDiv.style.transition = transtionTime + "s ease-in-out";
+        binDiv.style.transition = transtionTime + "s ease-in-out";
         textDiv.innerHTML = binName;
-        binDiv.style.animation = "fadeIn 2s linear forwards";
-        textDiv.style.animation = "fadeIn 2s linear forwards";
-        await sleep(2000);
-        textDiv.style.top = "150vw";
+        binDiv.style.animation = "fadeIn " + transtionTime + "s linear forwards";
+        textDiv.style.animation = "fadeIn " + transtionTime + "s linear forwards";
+        await sleep(transtionTime * 1000);
+        textDiv.style.top = "50vh";
         textDiv.style.transform = "scale(0.1)";
-        await sleep(2000);
-        binDiv.style.animation = "fadeOut 2s linear forwards";
-        textDiv.style.animation = "fadeOut 2s linear forwards";
+        await sleep(transtionTime * 1000);
+        binDiv.style.animation = "fadeOut " + transtionTime + "s linear forwards";
+        textDiv.innerHTML = "";
+        textDiv.style.transition = "none";
+        binDiv.style.transition = "none";
         await sleep(5000);
-        textDiv.style.top = "50vw";
+        textDiv.style.top = "25vh";
         textDiv.style.transform = "scale(1)";
         textDiv.style.transform = "rotate(0deg)"
         busy = false;
@@ -62,10 +74,12 @@ async function onMessageHandler(target, context, msg, self)
     if (command == "!binspin" && context.username == "devj4y")
     {
         busy = true;
+        binDiv.style.transition = "2s ease-in-out";
         binDiv.style.animation = "fadeInOut 5s linear forwards";
         binDiv.style.transform = "rotate(" + getRndInteger(360,3600) +"deg)";
         await sleep(5000);
         binDiv.style.transform = "rotate(0deg)"
+        binDiv.style.transition = "none";
         busy = false;
     }
 
