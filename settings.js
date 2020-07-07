@@ -29,13 +29,13 @@ const boldText = false;
 
 // true - only mods can use it
 // false - anyone can use it
-const modOnly = false;
+const modOnly = true;
 
 
 // Use this to test the settings
 // will save you from using the command to see any setting updates
 // replace false with true to turn on
-const isTesting = false;
+const isTesting = true;
 
 
 // Add a browser source in OBS, the size can be whatever you like 

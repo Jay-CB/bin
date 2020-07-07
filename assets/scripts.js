@@ -70,12 +70,11 @@ async function onMessageHandler(target, context, msg, self)
         textDiv.style.transform = "rotate(0deg)"
         busy = false;
     }
-    
     if (command == "!binspin" && context.username == "devj4y")
     {
         busy = true;
         binDiv.style.transition = "2s ease-in-out";
-        binDiv.style.animation = "fadeInOut 5s linear forwards";
+        binDiv.style.animation = "fadeInOut 4s linear forwards";
         binDiv.style.transform = "rotate(" + getRndInteger(360,3600) +"deg)";
         await sleep(5000);
         binDiv.style.transform = "rotate(0deg)"

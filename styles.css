@@ -1,17 +1,19 @@
 #binDiv{
     position: absolute;
-    height: 50vh;
-    width: 100vw;
-    top: 50vh;
+    height: 100vmin;
+    width: 100%;
+    top: 60vmin;
     background: url('assets/bin.png');
-    background-size: 50vh, 100vw;
+    background-size: 100vmin, 100vmin;
+    background-repeat: no-repeat;
+    background-position: center;
     opacity: 0;
 }
 #textDiv{
     position: absolute;
-    height: 50vh;
-    width: 100vw;
-    top: 25vh;
+    height: 20vmin;
+    width: 100%;
+    top: 10vmin;
     text-align: center;
     word-wrap: break-word;
     font-weight: normal;
