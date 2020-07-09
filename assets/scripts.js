@@ -40,7 +40,7 @@ function nameCheck(username){
     if(username == "mopheadniall" || username == "niall")
     {
         textDiv.innerHTML = "";
-        textDiv.style.background = "url('https://i.imgur.com/uQykA8l.png')";
+        textDiv.style.background = "url('assets/mophead.png')";
         textDiv.style.backgroundSize = "50vmin, 20vmin";
         textDiv.style.backgroundRepeat = "no-repeat";
         textDiv.style.backgroundPosition = "center";
@@ -50,7 +50,7 @@ function nameCheck(username){
     else if (username == "devj4y" || username == "jay")
     {
         textDiv.innerHTML = "";
-        textDiv.style.background = "url('https://i.imgur.com/STmtMx2.png')";
+        textDiv.style.background = "url('assets/jay.png')";
         textDiv.style.backgroundSize = "50vmin";
         textDiv.style.backgroundRepeat = "no-repeat";
         textDiv.style.backgroundPosition = "center"; // Thank you Bojack_86
