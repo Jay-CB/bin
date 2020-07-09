@@ -45,22 +45,22 @@ async function onMessageHandler(target, context, msg, self)
     {
         return;
     }
-    if (command.startsWith("!bin @"))
+    if (command.startsWith("!bin "))
     {
-        busy = true; // TODO: Sound effect?
-        const binName = command.substring(6);
+        busy = true;
+        const binName = command.substring(5).replace('@','');
         textDiv.style.fontSize = (textSize / binName.length) + "vw";
         await sleep(500);
         textDiv.style.transition = transtionTime + "s ease-in-out";
         binDiv.style.transition = transtionTime + "s ease-in-out";
         textDiv.innerHTML = binName;
-        binDiv.style.animation = "fadeIn " + transtionTime + "s linear forwards";
-        textDiv.style.animation = "fadeIn " + transtionTime + "s linear forwards";
+        binDiv.style.animation = "fadeIn " + fadeTime + "s linear forwards";
+        textDiv.style.animation = "fadeIn " + fadeTime + "s linear forwards";
         await sleep(transtionTime * 1000);
         textDiv.style.top = "50vh";
         textDiv.style.transform = "scale(0.1)";
         await sleep(transtionTime * 1000);
-        binDiv.style.animation = "fadeOut " + transtionTime + "s linear forwards";
+        binDiv.style.animation = "fadeOut " + fadeTime + "s linear forwards";
         textDiv.innerHTML = "";
         textDiv.style.transition = "none";
         binDiv.style.transition = "none";
