@@ -4,6 +4,9 @@ const twitchChannel = "devj4y";
 // Transition timer - replace 2
 const transtionTime = 2;
 
+// Fade timer - replace 2
+const fadeTime = 2;
+
 // The size of the text - replace 100
 const textSize = 100;
 
@@ -29,13 +32,13 @@ const boldText = false;
 
 // true - only mods can use it
 // false - anyone can use it
-const modOnly = true;
+const modOnly = false;
 
 
 // Use this to test the settings
 // will save you from using the command to see any setting updates
 // replace false with true to turn on
-const isTesting = true;
+const isTesting = false;
 
 
 // Add a browser source in OBS, the size can be whatever you like 
