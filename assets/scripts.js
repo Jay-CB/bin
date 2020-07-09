@@ -53,7 +53,7 @@ function nameCheck(username){
         textDiv.style.background = "url('https://i.imgur.com/STmtMx2.png')";
         textDiv.style.backgroundSize = "50vmin";
         textDiv.style.backgroundRepeat = "no-repeat";
-        textDiv.style.backgroundPosition = "center";
+        textDiv.style.backgroundPosition = "center"; // Thank you Bojack_86
         textDiv.style.height = "100vmin";
         retVal = true;
     }
