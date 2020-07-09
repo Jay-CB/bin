@@ -7,6 +7,10 @@ const transtionTime = 2;
 // Fade timer - replace 2
 const fadeTime = 2;
 
+// The amount the text spins - replace 1.5
+// 0 for none, 1 is a full rotation, 2 is two full rrotation so on
+const spinAmount = 1.5;
+
 // The size of the text - replace 100
 const textSize = 100;
 

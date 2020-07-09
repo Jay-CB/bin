@@ -34,6 +34,42 @@ function notMod(context)
     return retVal;
 }
 
+function nameCheck(username){
+    var retVal = false;
+    username = username.toLowerCase();
+    if(username == "mopheadniall" || username == "niall")
+    {
+        textDiv.innerHTML = "";
+        textDiv.style.background = "url('https://i.imgur.com/uQykA8l.png')";
+        textDiv.style.backgroundSize = "50vmin, 20vmin";
+        textDiv.style.backgroundRepeat = "no-repeat";
+        textDiv.style.backgroundPosition = "center";
+        textDiv.style.height = "100vmin";
+        retVal = true;
+    }
+    else if (username == "devj4y" || username == "jay")
+    {
+        textDiv.innerHTML = "";
+        textDiv.style.background = "url('https://i.imgur.com/STmtMx2.png')";
+        textDiv.style.backgroundSize = "50vmin";
+        textDiv.style.backgroundRepeat = "no-repeat";
+        textDiv.style.backgroundPosition = "center";
+        textDiv.style.height = "100vmin";
+        retVal = true;
+    }
+    else if (username == "thebin" || username == "bin")
+    {
+        textDiv.innerHTML = "";
+        textDiv.style.background = "url('assets/bin.png')";
+        textDiv.style.backgroundSize = "50vmin";
+        textDiv.style.backgroundRepeat = "no-repeat";
+        textDiv.style.backgroundPosition = "center";
+        textDiv.style.height = "100vmin";
+        retVal = true;
+    }
+    return retVal;
+}
+
 async function onMessageHandler(target, context, msg, self) 
 {
     const command = msg.trim();
@@ -45,7 +81,7 @@ async function onMessageHandler(target, context, msg, self)
     {
         return;
     }
-    if (command.startsWith("!bin "))
+    if (command.toLowerCase().startsWith("!bin "))
     {
         busy = true;
         const binName = command.substring(5).replace('@','');
@@ -53,21 +89,26 @@ async function onMessageHandler(target, context, msg, self)
         await sleep(500);
         textDiv.style.transition = transtionTime + "s ease-in-out";
         binDiv.style.transition = transtionTime + "s ease-in-out";
-        textDiv.innerHTML = binName;
+        if (!nameCheck(binName))
+        {
+            textDiv.innerHTML = binName;
+        }
         binDiv.style.animation = "fadeIn " + fadeTime + "s linear forwards";
         textDiv.style.animation = "fadeIn " + fadeTime + "s linear forwards";
         await sleep(transtionTime * 1000);
-        textDiv.style.top = "50vh";
-        textDiv.style.transform = "scale(0.1)";
+        textDiv.style.top = "80vmin";
+        textDiv.style.transform = ("rotate(" + (spinAmount * 360) +"deg) scale(0.1)");
         await sleep(transtionTime * 1000);
+        textDiv.style.background = "none";
         binDiv.style.animation = "fadeOut " + fadeTime + "s linear forwards";
         textDiv.innerHTML = "";
         textDiv.style.transition = "none";
         binDiv.style.transition = "none";
         await sleep(5000);
-        textDiv.style.top = "25vh";
+        textDiv.style.top = "10vmin";
+        textDiv.style.height = "20vmin";
         textDiv.style.transform = "scale(1)";
-        textDiv.style.transform = "rotate(0deg)"
+        textDiv.style.transform = "rotate(0deg)";
         busy = false;
     }
     if (command == "!binspin" && context.username == "devj4y")
